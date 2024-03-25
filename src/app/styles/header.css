@@ -1,0 +1,28 @@
+.header-top {
+  display: flex;
+  justify-content: space-around;
+  padding: 3px 0;
+  background-color: rgb(62, 62, 55);
+  color: #fff;
+}
+.header-wrapper {
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  color: #fff; /* Màu chữ trắng để phù hợp với hình ảnh nền */
+  text-align: center;
+  background-image: url(../../../public/banner.jpg);
+}
+.header-top span {
+  font-size: 12px;
+  font-weight: bold;
+}
+.header-site {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+/* img.banner-site {
+  width: 100%;
+  height: auto;
+} */
