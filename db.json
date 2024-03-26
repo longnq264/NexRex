@@ -3,9 +3,10 @@
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": { "name": "typicode" },
   "navigate": [
-    { "id": 1, "name": "contact" },
-    { "id": 2, "name": "support" },
-    { "id": 3, "name": "our product" },
-    { "id": 4, "name": "profile" }
+    { "id": 1, "name": "products" },
+    { "id": 2, "name": "contact" },
+    { "id": 3, "name": "support" },
+    { "id": 4, "name": "profile" },
+    { "id": 5, "name": "about" }
   ]
 }

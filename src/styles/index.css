@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a:hover {
+  color: rgb(203, 102, 14);
+}
+.layout-site {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.layout-site h1.title {
+  text-align: center;
+}
+nav.sidebar-container {
+  position: fixed;
+  background: grey;
+  top: 0;
+  left: 0;
+}
+.counter-layout {
+  display: flex;
+}
+/* -----------------------------------------Navigate ----------------------------------- */
+
+.menu-wrapper ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.menu-wrapper ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.menu-wrapper ul li a:hover {
+  color: orange;
+}
+nav.nav-item {
+  padding-top: 15px;
+}
+/* -------------------------------------------- Footer --------------------------------------*/
+footer.footer-container {
+  padding: 30px 0;
+  background-color: rgb(62, 62, 55);
+}
+
+.footer-wrapper p {
+  text-align: center;
+}

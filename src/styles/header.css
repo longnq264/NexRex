@@ -7,11 +7,11 @@
 }
 .header-wrapper {
   background-size: cover;
-  background-position: center;
+  background-position: top;
   height: 800px;
   color: #fff; /* Màu chữ trắng để phù hợp với hình ảnh nền */
   text-align: center;
-  background-image: url(../../../public/banner.jpg);
+  background-image: url("../../public/banner.jpg");
 }
 .header-top span {
   font-size: 12px;
@@ -20,7 +20,13 @@
 .header-site {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 20px;
+}
+.logo-site a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 40px;
 }
 /* img.banner-site {
   width: 100%;

@@ -1,8 +1,9 @@
 import React from "react";
-import "../styles/header.css";
+import "@/styles/header.css";
 import Image from "next/image";
-import BackGround from "../../../public/banner.jpg";
+import BackGround from "@/public/banner.jpg";
 import Navigation from "./Navigation";
+import Link from "next/link";
 const justifyOptions = [
   "flex-start",
   "center",
@@ -20,11 +21,13 @@ const Header = (props) => {
       <div className="header-wrapper">
         <div className="header-site layout-site">
           <div className="logo-site">
-            <h1 className="logo">NEXREX</h1>
+            <Link href={"/"}>NEXREX</Link>
           </div>
-          <nav className="nav-item">
-            <Navigation />
-          </nav>
+          <div className="wrap-header-right">
+            <nav className="nav-item">
+              <Navigation />
+            </nav>
+          </div>
         </div>
       </div>
     </header>

@@ -4,10 +4,9 @@ import axios from "axios";
 
 const Navigation = () => {
   const [state, setState] = useState([]);
-  console.log(state);
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/navigate");
+      const response = await axios.get("http://localhost:8000/navigate");
       setState(response.data);
     } catch (error) {
       console.log("error");
