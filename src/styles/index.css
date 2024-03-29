@@ -6,11 +6,12 @@ a:hover {
   color: rgb(203, 102, 14);
 }
 .layout-site {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
-.layout-site h1.title {
+.layout-site h1.title-site {
   text-align: center;
+  margin: 20px 0;
 }
 nav.sidebar-container {
   position: fixed;
@@ -21,6 +22,41 @@ nav.sidebar-container {
 .counter-layout {
   display: flex;
 }
+main.main-container {
+  padding: 15px 0;
+}
+.auth-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* ----------- Login Form -------------- */
+.login-wrapper {
+  /* position: relative; */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.loginform-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+form.login-form {
+  max-width: 400px;
+}
+form button.btn-auth {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: gray;
+}
+form span.ant-input-affix-wrapper {
+  margin-bottom: 10px;
+}
+button.ant-btn.css-dev-only-do-not-override-djtmh8.ant-btn-primary.btn-auth {
+  height: 40px;
+}
+
 /* -----------------------------------------Navigate ----------------------------------- */
 
 .menu-wrapper ul li {
@@ -38,13 +74,4 @@ nav.sidebar-container {
 }
 nav.nav-item {
   padding-top: 15px;
-}
-/* -------------------------------------------- Footer --------------------------------------*/
-footer.footer-container {
-  padding: 30px 0;
-  background-color: rgb(62, 62, 55);
-}
-
-.footer-wrapper p {
-  text-align: center;
 }

@@ -28,7 +28,12 @@
   font-weight: 900;
   font-size: 40px;
 }
-/* img.banner-site {
-  width: 100%;
-  height: auto;
-} */
+.list-icon {
+  padding-top: 13px;
+  font-size: 23px;
+  margin-left: 30px;
+}
+.list-icon a {
+  color: #ffffff;
+  margin: 0 10px;
+}

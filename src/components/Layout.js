@@ -8,10 +8,10 @@ import SideBar from "./SideBar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="layout">
+    <div className="layout-container">
       <Header />
       <SideBar />
-      <main>{children}</main>
+      <main className="main-container">{children}</main>
       <Footer />
     </div>
   );

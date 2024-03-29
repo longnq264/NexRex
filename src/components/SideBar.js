@@ -18,7 +18,6 @@ const SideBar = () => {
               <li>Menu Item 1</li>
               <li>Menu Item 2</li>
               <li>Menu Item 3</li>
-              {/* Add more menu items here */}
             </ul>
           </nav>
         </div>
