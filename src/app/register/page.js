@@ -5,7 +5,11 @@ import React from "react";
 const Register = () => {
   return (
     <RegisterLayout>
-      <RegisterForm />
+      <div className="wrapper-register-site">
+        <div className="layout-site">
+          <RegisterForm />
+        </div>
+      </div>
     </RegisterLayout>
   );
 };

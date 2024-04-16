@@ -29,7 +29,14 @@ main.main-container {
   max-width: 1200px;
   margin: 0 auto;
 }
+h2.title-site {
+  margin-bottom: 15px;
+  color: #711414;
+}
+
 /* ----------- Login Form -------------- */
+
+/* #711414 */
 .login-wrapper {
   /* position: relative; */
   max-width: 1200px;
@@ -40,6 +47,7 @@ main.main-container {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
 }
 form.login-form {
   max-width: 400px;
@@ -56,7 +64,60 @@ form span.ant-input-affix-wrapper {
 button.ant-btn.css-dev-only-do-not-override-djtmh8.ant-btn-primary.btn-auth {
   height: 40px;
 }
+form.login-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.loginform-container
+  span.ant-input-affix-wrapper.css-dev-only-do-not-override-djtmh8.ant-input-outlined.ant-input-status-success {
+  height: 50px;
+  font-size: 16px;
+}
+button.ant-btn.css-dev-only-do-not-override-djtmh8.ant-btn-primary.btn-auth:hover {
+  background-color: #711414;
+}
+p.signin-link a {
+  color: #711414;
+}
+p.signin-link a:hover {
+  color: rgb(72, 72, 213);
+}
 
+/* -----------------------------------------Register Form -------------------------------------- */
+
+.root-register {
+  background-image: linear-gradient(
+    to right,
+    rgb(86, 90, 126),
+    rgb(158 116 116)
+  );
+  height: 3000px;
+  padding: 30px;
+}
+.wrapper-register-site {
+  background-image: url("../../public/backgroundLogin.png");
+  background-size: 126.5px;
+  height: 3000px;
+}
+form.register-form {
+  max-width: 400px;
+  display: flex;
+  padding: 30px;
+  border-radius: 3%;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+.register-form-container.register-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: #fff; */
+}
+.register-form-container.register-form h3.log-error {
+  color: #ff1111;
+}
 /* -----------------------------------------Navigate ----------------------------------- */
 
 .menu-wrapper ul li {

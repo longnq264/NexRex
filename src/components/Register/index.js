@@ -1,17 +1,38 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import { Form, Input, Button } from "antd";
-import { UserOutlined, LockOutlined, MailOutlined } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
+import { FaUserLarge } from "react-icons/fa6";
+import { FaLock } from "react-icons/fa";
+import { MdDriveFileRenameOutline } from "react-icons/md";
+import { BsFillShieldLockFill } from "react-icons/bs";
+import axios from "axios";
+
 const RegisterForm = () => {
-  const [formData, setFormData] = useState({});
+  const router = useRouter();
+  const [promp, setPromp] = useState("");
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmpassword: "",
+  });
+  console.log("state", data);
 
-  const inputOnChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/signup",
+        values
+      );
+      setData(response.data.message);
+      setPromp(response.data.message);
+      console.log("response", response);
+      router.push("/auth");
+    } catch (error) {
+      setPromp(error.response.data.message);
+      console.log("error ne", error.response.data.message);
+    }
     console.log("Submitted values:", values);
   };
 
@@ -20,54 +41,47 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="register-form-container">
+    <div className="register-form-container register-form">
+      <h2 className="title-site">Register</h2>
+      <h3 className="log-error">{promp}</h3>
+      {/* <h3 className="log-data">{data}</h3> */}
       <Form
         className="register-form"
-        initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
         <Form.Item
           name="name"
-          rules={[{ required: true, message: "Please input your name!" }]}
+          rules={[{ required: true, message: "Please input your username!" }]}
         >
-          <Input
-            placeholder="Name"
-            prefix={<UserOutlined />}
-            onChange={inputOnChange}
-          />
+          <Input placeholder="Name" prefix={<MdDriveFileRenameOutline />} />
         </Form.Item>
         <Form.Item
           name="email"
-          rules={[
-            { required: true, message: "Please input your email!" },
-            { type: "email", message: "Invalid email address" },
-          ]}
+          rules={[{ required: true, message: "Please input your email!" }]}
         >
-          <Input
-            placeholder="Email"
-            prefix={<MailOutlined />}
-            onChange={inputOnChange}
-          />
+          <Input placeholder="Email" prefix={<FaUserLarge />} />
         </Form.Item>
         <Form.Item
           name="password"
           rules={[{ required: true, message: "Please input your password!" }]}
         >
+          <Input.Password placeholder="Password" prefix={<FaLock />} />
+        </Form.Item>
+        <Form.Item
+          name="confirmpassword"
+          rules={[{ required: true, message: "Please input your password!" }]}
+        >
           <Input.Password
-            placeholder="Password"
-            prefix={<LockOutlined />}
-            onChange={inputOnChange}
+            placeholder="Confirm Password"
+            prefix={<BsFillShieldLockFill />}
           />
         </Form.Item>
         <Form.Item>
           <Button className="btn-auth" type="primary" htmlType="submit">
-            Register
+            sign up
           </Button>
         </Form.Item>
-        <p>
-          Already have an account? <Link href={"/login"}>Sign in here</Link>
-        </p>
       </Form>
     </div>
   );

@@ -1,32 +1,23 @@
 import React, { useState } from "react";
-import "@/styles/header.css";
-import Image from "next/image";
-import BackGround from "@/public/banner.jpg";
-import Navigation from "./Navigation";
+import Navigation from "./home/Navigation";
 import Link from "next/link";
 import { Flex } from "antd";
 import { IoBagSharp } from "react-icons/io5";
 import { FaUserCheck, FaUserTimes } from "react-icons/fa";
-const justifyOptions = [
-  "flex-start",
-  "center",
-  "flex-end",
-  "space-between",
-  "space-around",
-  "space-evenly",
-];
+import Logo from "./home/Logo";
+import "@/styles/header.css";
 
-const alignOptions = ["flex-start", "center", "flex-end"];
 const Header = (props) => {
   const [user, setUser] = useState(false);
+
+  const handleLogout = () => {
+    setUser(false);
+  };
   return (
     <header className="header-container">
-      {/* <Image className="banner-site" src={BackGround} alt="banner" /> */}
       <div className="header-wrapper">
         <div className="header-site layout-site">
-          <div className="logo-site">
-            <Link href={"/"}>NEXREX</Link>
-          </div>
+          <Logo />
           <Flex className="wrap-header-right">
             <nav className="nav-item">
               <Navigation />
@@ -36,7 +27,11 @@ const Header = (props) => {
                 <IoBagSharp />
               </Link>
               <Link href={user ? "/logout" : "/auth"}>
-                {user ? <FaUserTimes /> : <FaUserCheck />}
+                {user ? (
+                  <FaUserTimes onClick={handleLogout} />
+                ) : (
+                  <FaUserCheck />
+                )}
               </Link>
             </div>
           </Flex>

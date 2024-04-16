@@ -1,15 +1,7 @@
 "use client";
-import Image from "next/image";
-import { Provider } from "react-redux";
-import { useEffect } from "react";
-import { Suspense } from "react";
-import Counter from "@/components/Counter";
-import Data from "@/components/Data";
 import Layout from "@/components/Layout";
-// carousel
-import CarouselPage from "@/components/Carousel";
-// slider
-import SliderBanner from "@/components/SliderBanner";
+import SliderBanner from "@/components/home/SliderBanner";
+import CarouselPage from "@/components/home/Carousel";
 import DashBoard from "./dashboard/page";
 
 export default function Home() {
@@ -19,12 +11,8 @@ export default function Home() {
         <Layout>
           <div className="layout-site">
             <h1 className="title-site">Root Layout</h1>
-            <>
-              <DashBoard />
-            </>
           </div>
           <div className="carousel-container">
-            {/* <CarouselPage /> */}
             <SliderBanner />
           </div>
         </Layout>

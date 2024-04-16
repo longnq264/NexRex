@@ -3,5 +3,5 @@ export const metadata = {
 };
 
 export default function RegisterLayout({ children }) {
-  return <section>{children}</section>;
+  return <section className="root-register">{children}</section>;
 }

@@ -6,7 +6,7 @@ const LoginPage = () => {
   return (
     <AuthLayout>
       <div className="login-wrapper">
-        <h1>Login Page</h1>
+        <h1 className="site-title">Login Page</h1>
         <LoginForm />
       </div>
     </AuthLayout>
