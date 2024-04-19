@@ -14,13 +14,14 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
+
   const [message, setMessage] = useState("");
   const router = useRouter();
   const user = useAppSelector((state) => state.auth.user);
   const loggedin = useAppSelector((state) => state.auth.isLoggedIn);
   console.log(loggedin);
   const dispatch = useAppDispatch();
-  console.log("state", data);
+  // console.log("state", data);
   //submit form
   const onFinish = async (values) => {
     try {
@@ -30,9 +31,10 @@ const LoginForm = () => {
       );
       const userData = { ...response.data };
       dispatch(login(userData));
-      // if (response) {
-      //   router.push("/");
-      // }
+      setMessage("Success");
+      if (response) {
+        router.push("/");
+      }
     } catch (error) {
       if (error.response) {
         console.log("Error response:", error.response.data.message);
@@ -75,6 +77,7 @@ const LoginForm = () => {
             Not a member? <Link href={"/register"}>Sign up now</Link>
           </p>
         </Form>
+        <div>{message && <div className="message">{message}</div>}</div>
       </div>
       <div className="profile">{/* <h2>User: {use}</h2> */}</div>
     </>

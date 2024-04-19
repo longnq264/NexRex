@@ -37,3 +37,6 @@
   color: #ffffff;
   margin: 0 10px;
 }
+.pointer {
+  cursor: pointer;
+}

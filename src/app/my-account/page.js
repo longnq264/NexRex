@@ -1,8 +1,9 @@
+"use client";
 import React, { useState } from "react";
 import ClientLayout from "./layout";
 
 const MyAccount = () => {
-  cont[(loggedIn, setLoggedIn)] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <>

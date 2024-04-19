@@ -9,23 +9,31 @@ const contentStyle = {
   background: "#364d79",
 };
 const CarouselPage = () => {
+  const [categories, setCategories] = useState([]);
+  console.log("state", state);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/categories");
+      setCategories(response.data);
+      console.log("response", response.data);
+    } catch (error) {
+      console.log("error fetching data");
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
   return (
     <Carousel afterChange={onChange}>
-      <div>
-        <h3 style={contentStyle}>1</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>2</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>3</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>4</h3>
-      </div>
+      {categories.map((data, index) => {
+        <div key={index}>
+          <h3 style={contentStyle}>{data.name}</h3>
+        </div>;
+      })}
     </Carousel>
   );
 };

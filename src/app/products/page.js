@@ -9,7 +9,7 @@ const Products = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8081/api/products");
+      const response = await axios.get("http://localhost:8080/api/categories");
       setState(response.data);
       console.log("response", response.data);
     } catch (error) {
